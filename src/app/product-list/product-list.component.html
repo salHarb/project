@@ -1,0 +1,45 @@
+
+<div class="container mt-5">
+  
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Product Name"
+      [(ngModel)]="Search_Filter"
+    />
+  
+  <div class="row">
+    <div
+      class="card col-3"
+      *ngFor="let product of Filtered_Product_by_Search"
+      style="width: 18rem"
+    >
+      <img [routerLink]="['/product-details', product._id]"
+        class="card-img-top"
+        [src]="product.ProductImg"
+        alt="Card image cap"
+      />
+
+      <div class="card-body"
+         >
+        <h5 class="card-title">{{ product.ProductName }}</h5>
+        <!-- <p class="card-text" >
+            {{ pr.overview }}
+          </p> -->
+        <p>{{ product.ProductPrice | currency }}</p>
+        <p>Rating: {{ product.rating }}</p>
+        <!-- <p>{{ movie.release_date | date }}</p> -->
+        <p>{{ product.brand }}</p>
+        <p> {{ product.Qty }} Left</p>
+        <!-- <app-stars [movieId]="movie.id" ></app-stars> -->
+        <!-- <app-stars  [rating]="movie.movie_rating" (ratingClicked)="acceptChildMessage($event)"></app-stars> -->
+        <!-- <p>{{myMovie.rating}}</p> -->
+        <!-- <button href="#" class="btn btn-info" [disabled]="myMovie.notAvaliabl" (click)="getMovieTitle()">Watch Movie</button> -->
+        <button class="btn btn-info">buy</button>
+        <a class="btn btn-primary" [routerLink]="['/product-details', product._id]"
+          >Show</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

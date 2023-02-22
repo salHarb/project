@@ -1,0 +1,13 @@
+<div class="custom-div">
+  <!-- Head -->
+  <img width="200" height="200" [src]="myProduct.ProductImg" alt="" class="img-responsive">
+  <h3>{{myProduct.ProductName}}</h3>
+  <h3>{{myProduct.ProductPrice |currency}}</h3>
+  <p>{{myProduct.rating}} <i class="fa fa-star"></i></p>
+
+  <!-- Paragraph -->
+  <p>{{myProduct.ProductDescription}}</p>
+  <!-- Buttons -->
+  <a (click)="click(myProduct)" href="#" class="btn btn-info"><i class="fa fa-ticket"></i> Buy </a>
+  <!-- <a href="#" class="ui-btn bg-green"><i class="fa fa-dot-circle-o"></i> Buy DVDs</a> -->
+</div>
